@@ -4,6 +4,16 @@
   <%= @user.username %>
 </h2>
 
+<% if not @user.favorite_style.nil? %>
+    <p>
+    Favorite style: <%= @user.favorite_style %>
+    </p>
+<% end %>
+
+<% if not @user.favorite_brewery.nil? %>
+    Favorite brewery: <%= @user.favorite_brewery.name %>
+<% end %>
+
 <% if @user.ratings.empty? %>
   <p>has not yet rated any beers</p>
 <% else %>
