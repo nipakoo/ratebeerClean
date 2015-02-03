@@ -3,6 +3,9 @@ require 'rails_helper'
 describe "Beer" do
 
   it "is added with a valid name" do
+    FactoryGirl.create :user
+    sign_in(username:"Pekka", password:"Foobar1")
+
     visit new_beer_path
     fill_in('beer_name', with:'Kalja')
 
@@ -12,6 +15,9 @@ describe "Beer" do
   end
 
   it "is not added with an invalid name" do
+    FactoryGirl.create :user
+    sign_in(username:"Pekka", password:"Foobar1")
+
     visit new_beer_path
 
     click_button('Create Beer')

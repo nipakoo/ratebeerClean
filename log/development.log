@@ -1498,3 +1498,5 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-03 19:30:36
 
 
 Started GET "/assets/memberships.js?body=1" for 127.0.0.1 at 2015-02-03 19:30:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
