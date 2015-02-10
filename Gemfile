@@ -6,6 +6,8 @@ gem 'rails', '4.1.5'
 
 gem 'rspec-its'
 
+gem 'httparty'
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -20,6 +22,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', require: false
+  gem 'webmock'
 end
 
 group :production do

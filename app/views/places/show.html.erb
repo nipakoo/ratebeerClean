@@ -1,0 +1,20 @@
+<% @places = BeermappingApi.places_in(session[:last_city]) %>
+
+<% @places.each do |place| %>
+
+    <% if place.id == params[:id] %>
+        <h2>
+          <%= place.name %>
+        </h2>
+
+        <p>
+          <%= place.street %>
+        </p>
+
+        <p>
+          <%= place.zip %> <%= place.city %>
+        </p>
+
+        <iframe src=<%= place.blogmap %>></iframe>
+    <% end %>
+<% end %>
