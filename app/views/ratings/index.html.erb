@@ -1,15 +1,57 @@
-<p>
-  Number of ratings: <%= Rating.count %>
-</p>
+<h1>Rating statistics</h1>
 
-<h2>List of ratings</h2>
+<h2>Best beers</h2>
+    <% @beers = Beer.all.sort_by { |beer| beer.average_rating }.last(3) %>
 
-<ul>
-  <% @ratings.each do |rating| %>
-    <li> <%= rating %> <%= link_to rating.user.username, rating.user %> </li>
-  <% end %>
-</ul>
+    <% @beers.each do |beer| %>
+        <li> <%= beer.name %> <%= beer.average_rating %></li>
+    <% end %>
 
-<% if not current_user.nil? %>
-    <%= link_to 'New Rating', new_rating_path %>
-<% end %>
+<h2>Best breweries</h2>
+    <% @breweries = Brewery.all.sort_by { |brewery| brewery.average_rating }.last(3) %>
+
+    <% @breweries.each do |brewery| %>
+        <li> <%= brewery.name %> <%= brewery.average_rating %></li>
+    <% end %>
+
+<h2>Best styles</h2>
+    <% @styles = Style.all.sort_by { |style| style.average_rating }.last(3) %>
+
+    <% @styles.each do |style| %>
+        <li> <%= style.name %> <%= style.average_rating %></li>
+    <% end %>
+
+<h2>Most active users</h2>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Favorite beer</th>
+        <th>preferred style</th>
+        <th>favorite brewery</th>
+        <th>ratings</th>
+      </tr>
+      </thead>
+
+      <% @users = User.all.sort_by { |user| user.ratings.count }.last(3) %>
+
+      <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.username %></td>
+                <td><%= user.favorite_beer.name %></td>
+                <td><%= user.favorite_style.name %></td>
+                <td><%= user.favorite_brewery.name %></td>
+                <td><%= user.ratings.count %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+<h2>Recent ratings</h2>
+    <% @ratings = Rating.recent_five %>
+    <% @ratings.each do |rating| %>
+        <li><%= rating.beer.name %> <%= rating.beer.style.name %> <%= rating.score %> <%= rating.user.username %></li>
+    <% end %>
+
+<%= link_to 'New Rating', new_rating_path, class:'btn btn-primary' if current_user %>

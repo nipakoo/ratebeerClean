@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/rating.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/rating.rb": [
         1,
         1,
         1,
@@ -11,35 +11,71 @@
         null,
         null,
         1,
-        11,
+        22,
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/helpers/application_helper.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/helpers/beer_clubs_helper.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/beer_clubs_helper.rb": [
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/helpers/beers_helper.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/beers_helper.rb": [
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/helpers/breweries_helper.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/breweries_helper.rb": [
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/helpers/memberships_helper.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/memberships_helper.rb": [
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/helpers/users_helper.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/styles_helper.rb": [
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/beer_clubs_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/beer.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null
+      ],
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/concerns/rating_average.rb": [
+        1,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null
+      ],
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/beer_club.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/beer_clubs_controller.rb": [
         1,
         1,
         1,
@@ -53,6 +89,12 @@
         null,
         null,
         1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
         null,
         null,
         null,
@@ -116,7 +158,7 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/application_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -125,8 +167,8 @@
         1,
         null,
         1,
-        107,
-        84,
+        113,
+        79,
         null,
         null,
         1,
@@ -134,111 +176,7 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/memberships_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/beer.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/concerns/rating_average.rb": [
-        1,
-        1,
-        null,
-        1,
-        7,
-        null,
-        null
-      ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/brewery.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/brewery.rb": [
         1,
         1,
         null,
@@ -250,7 +188,7 @@
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/user.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/user.rb": [
         1,
         1,
         null,
@@ -269,32 +207,75 @@
         1,
         null,
         1,
-        3,
-        2,
+        9,
+        8,
         null,
         null,
         1,
-        22,
+        9,
+        8,
+        null,
+        null,
         12,
         null,
         null,
+        20,
+        null,
+        null,
         1,
-        22,
-        12,
+        9,
+        8,
+        null,
+        null,
+        17,
+        null,
+        null,
+        25,
+        null,
+        null,
+        1,
+        32,
+        null,
+        null,
+        1,
+        33,
+        null,
+        null,
+        1,
+        14,
+        49,
+        null,
+        14,
+        null,
+        null,
+        1,
+        19,
+        71,
+        null,
+        19,
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/sessions_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/style.rb": [
+        1,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null
+      ],
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
         null,
         null,
         1,
-        9,
-        9,
         8,
         8,
+        7,
+        7,
         null,
         1,
         null,
@@ -308,7 +289,7 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/users_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -387,23 +368,18 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/membership.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/membership.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/beer_club.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/beers_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/beers_controller.rb": [
         1,
         1,
         1,
         1,
+        null,
         null,
         null,
         null,
@@ -414,6 +390,8 @@
         null,
         null,
         1,
+        0,
+        0,
         null,
         null,
         null,
@@ -423,6 +401,7 @@
         null,
         null,
         1,
+        0,
         null,
         null,
         null,
@@ -466,23 +445,23 @@
         null,
         null,
         1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
         1,
         4,
         4,
         null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/breweries_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/breweries_controller.rb": [
         1,
         1,
         1,
@@ -549,6 +528,7 @@
         null,
         1,
         null,
+        null,
         1,
         1,
         null,
@@ -559,7 +539,7 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/lib/beermapping_api.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/lib/beermapping_api.rb": [
         1,
         1,
         6,
@@ -567,6 +547,10 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
         null,
         1,
         4,
@@ -578,7 +562,7 @@
         null,
         3,
         3,
-        42,
+        7,
         null,
         null,
         null,
@@ -588,7 +572,7 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/models/place.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/models/place.rb": [
         1,
         1,
         null,
@@ -599,10 +583,13 @@
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/places_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/places_controller.rb": [
+        1,
         1,
         null,
+        null,
         1,
+        0,
         null,
         null,
         1,
@@ -611,17 +598,12 @@
         1,
         null,
         2,
+        2,
         null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
         null,
         null
       ],
-      "/home/albis/Documents/WePa/ratebeerClean/app/controllers/ratings_controller.rb": [
+      "/Users/mluukkai/kurssirepot/ratebeer/app/controllers/ratings_controller.rb": [
         1,
         1,
         1,
@@ -654,6 +636,6 @@
         null
       ]
     },
-    "timestamp": 1423581394
+    "timestamp": 1423336357
   }
 }

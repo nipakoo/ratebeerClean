@@ -1,14 +1,6 @@
 require 'rails_helper'
 
-include OwnTestHelper
-
-BeerClubsController
-MembershipsController
-
 describe "User" do
-  let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
-  let!(:beer1) { FactoryGirl.create :beer, name:"iso 3", brewery:brewery }
-
   before :each do
     FactoryGirl.create :user
   end
@@ -40,16 +32,23 @@ describe "User" do
     }.to change{User.count}.by(1)
   end
 
-  it "favorite style shown" do
+  it "when user has made ratings, favorite beer, style and brewery are shown on user page" do
     user = User.first
-    FactoryGirl.create(:rating, score:25, beer:beer1, user:user)
+    brewery = FactoryGirl.create(:brewery, name:"Koff")
+    create_beer_with_rating(10, user, brewery, "Ale")
+    create_beer_with_rating(25, user, brewery, "IPA")
 
-    sign_in(username:"Pekka", password:"Foobar1")
-    FactoryGirl.create(:rating, score:25, beer:beer1, user:user)
+    brewery2 = FactoryGirl.create(:brewery, name:"Sierra Nevada")
+    best = create_beer_with_rating(30, user, brewery2, "IPA")
+    create_beer_with_rating(20, user, brewery2, "Lager")
 
-    visit user_path(user)
+    brewery3 = FactoryGirl.create(:brewery, name:"Hartwall")
+    create_beer_with_rating(15, user, brewery3, "Pils")
+    create_beer_with_rating(12, user, brewery3, "Lager")
 
-    expect(page).to have_content 'Favorite style: Lager'
-    expect(page).to have_content 'Favorite brewery: Koff'
+    visit user_path(user.id)
+
+    expect(page).to have_content 'Favorite brewery: Sierra Nevada'
+    expect(page).to have_content 'Favorite style: IPA'
   end
 end

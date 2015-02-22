@@ -3,26 +3,14 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
-
-gem 'rspec-its'
-
-gem 'httparty'
-
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
 end
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-end
-
-group :test do
-  gem 'factory_girl_rails'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'simplecov', require: false
-  gem 'webmock'
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
 end
 
 group :production do
@@ -60,15 +48,21 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-its'
+end
+
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov', require: false
+  gem 'webmock'
+end
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'httparty'
 

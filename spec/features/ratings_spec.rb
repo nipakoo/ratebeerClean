@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-include OwnTestHelper
-
-describe "Rating" do
+describe "Ratings" do
   let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
   let!(:beer1) { FactoryGirl.create :beer, name:"iso 3", brewery:brewery }
   let!(:beer2) { FactoryGirl.create :beer, name:"Karhu", brewery:brewery }
@@ -12,7 +10,7 @@ describe "Rating" do
     sign_in(username:"Pekka", password:"Foobar1")
   end
 
-  it "when given, is registered to the beer and user who is signed in" do
+  it "when one given, is registered to the beer and user who is signed in" do
     visit new_rating_path
     select('iso 3', from:'rating[beer_id]')
     fill_in('rating[score]', with:'15')
@@ -26,42 +24,45 @@ describe "Rating" do
     expect(beer1.average_rating).to eq(15.0)
   end
 
-  it "amount shown correctly on ratings page" do
-    create_some_ratings
+  it "that exist are all shown" do
+    FactoryGirl.create(:rating, score:10, beer:beer1, user:user)
+    FactoryGirl.create(:rating, score:20, beer:beer1, user:user)
+    FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
 
     visit ratings_path
+    expect(page).to have_content "Total of 3 ratings given"
 
-    expect(page).to have_content 'iso 3 25'
-    expect(page).to have_content 'iso 3 17'
-    expect(page).to have_content 'Karhu 25'
-    expect(page).to have_content 'Number of ratings: 3'
+    Rating.all.each do |rating|
+      expect(page).to have_content rating.to_s
+    end
   end
 
-  it "amount shown correctly on user page" do
-    create_some_ratings
+  it "of one user are shown at user's page" do
+    my_rating1 = FactoryGirl.create(:rating, score:10, beer:beer1, user:user)
+    my_rating2 = FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
+    other_rating = FactoryGirl.create(:rating, score:20, beer:beer1)
 
-    visit user_path(user)
+    visit user_path(user.id)
+    expect(page).to have_content "Has made 2 ratings"
 
-    expect(page).to have_content 'Has made 3 ratings'
-    expect(page).to have_content 'iso 3 25'
-    expect(page).to have_content 'iso 3 17'
-    expect(page).to have_content 'Karhu 25'
+    expect(page).to have_content my_rating1.to_s
+    expect(page).to have_content my_rating2.to_s
+    expect(page).not_to have_content other_rating.to_s
   end
 
-  it "delete removes the rating from database" do
-    FactoryGirl.create(:rating, score:25, beer:beer1, user:user)
+  it "can be removed by the user" do
+    my_rating1 = FactoryGirl.create(:rating, score:10, beer:beer1, user:user)
+    my_rating2 = FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
+    other_rating = FactoryGirl.create(:rating, score:20, beer:beer1)
 
-    visit user_path(user)
+    visit user_path(user.id)
+    deleted_rating = page.all('li')[1].text
 
     expect{
-      click_link("delete")
-    }.to change{Rating.count}.from(1).to(0)
+      page.all('a', text:'delete' )[1].click
+    }.to change{Rating.count}.from(3).to(2)
 
+    visit user_path(user.id)
+    expect(page).not_to have_content deleted_rating
   end
-end
-
-def create_some_ratings
-  FactoryGirl.create(:rating, score:25, beer:beer1, user:user)
-  FactoryGirl.create(:rating, score:17, beer:beer1, user:user)
-  FactoryGirl.create(:rating, score:25, beer:beer2, user:user)
 end
